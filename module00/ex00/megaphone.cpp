@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 01:10:51 by absalhi           #+#    #+#             */
-/*   Updated: 2023/02/07 01:32:13 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/02/25 13:45:17 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int	main(int argc, char **argv)
 	for (int i = 1; i < argc; i++)
 	{
 		std::string str = argv[i];
-		std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+		int j = -1;
+		while (str[++j])
+			str[j] = toupper(str[j]);
 		std::cout << str;
 	}
 	std::cout << std::endl;

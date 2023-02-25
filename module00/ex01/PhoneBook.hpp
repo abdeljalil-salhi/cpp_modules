@@ -3,32 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 01:36:24 by absalhi           #+#    #+#             */
-/*   Updated: 2023/02/07 02:23:32 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/02/25 14:33:14 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-class PhoneBook {
+# include <iostream>
+# include "Contact.hpp"
+
+class PhoneBook
+{
 	private:
-		int		n_contacts;
+		int		i_contacts;
+		size_t	n_contacts;
+		Contact	contacts[8];
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
-		void addContact(void);
-};
 
-class PhoneBookInit {
-	private:
-		char	c;
-		int		n;
-	public:
-		PhoneBookInit(char c, int n);
-		~PhoneBookInit(void);
+		void add(void);
+		void search(void);
 };
 
 #endif

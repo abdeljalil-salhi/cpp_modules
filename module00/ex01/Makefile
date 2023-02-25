@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: absalhi <absalhi@student.42.fr>            +#+  +:+       +#+         #
+#    By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 01:32:49 by absalhi           #+#    #+#              #
-#    Updated: 2023/02/07 02:00:41 by absalhi          ###   ########.fr        #
+#    Updated: 2023/02/25 16:59:44 by absalhi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ GREEN		=	'\033[32m'
 GRAY		=	'\033[2;37m'
 ITALIC		=	'\033[3m'
 
-SRCS		=	PhoneBook.cpp main.cpp
+SRCS		=	PhoneBook.cpp Contact.cpp main.cpp
 OBJS		=	$(SRCS:.cpp=.o)
 
 .cpp.o		:
@@ -35,6 +35,9 @@ $(NAME)		:	$(OBJS)
 				@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 				@echo $(GREEN)"- Compiled -"$(NONE)
 
+debug		:	CFLAGS += -D DEBUG
+debug		:	re
+
 clean		:
 				@echo $(ITALIC)$(GRAY) "     - Removing object files..." $(NONE)
 				@$(RM) $(OBJS)
@@ -45,4 +48,4 @@ fclean		:	clean
 
 re			:	fclean all
 
-.PHONY		:	all clean fclean re
+.PHONY		:	all debug clean fclean re

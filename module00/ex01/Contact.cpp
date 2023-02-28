@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:54:47 by absalhi           #+#    #+#             */
-/*   Updated: 2023/02/28 11:53:57 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/02/28 14:41:31 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,9 @@ Contact::Contact(void)
 
 Contact::Contact(std::string first_name, std::string last_name, std::string nickname,
 				 std::string phone_number, std::string darkest_secret)
+	: first_name(first_name), last_name(last_name), nickname(nickname),
+	  phone_number(phone_number), darkest_secret(darkest_secret)
 {
-	this->first_name = first_name;
-	this->last_name = last_name;
-	this->nickname = nickname;
-	this->phone_number = phone_number;
-	this->darkest_secret = darkest_secret;
 	if (DEBUG)
 		std::cout << "Contact created" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 01:36:24 by absalhi           #+#    #+#             */
-/*   Updated: 2023/02/25 22:52:32 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/02/28 15:24:26 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,21 @@
 
 class PhoneBook
 {
+	
 	private:
-		int		i_contacts;
-		size_t	n_contacts;
-		Contact	contacts[8];
+	
+		int		_iContacts;
+		size_t	_nContacts;
+		Contact	_contacts[8];
+	
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+	
+		PhoneBook( void );
+		~PhoneBook( void );
 
-		void add(void);
-		void search(void);
+		void add( void );
+		void search( void );
+
 };
 
 #endif

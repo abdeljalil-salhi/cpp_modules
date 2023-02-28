@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 01:59:23 by absalhi           #+#    #+#             */
-/*   Updated: 2023/02/25 22:52:37 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/02/28 11:54:36 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ static std::string trunc(std::string str)
 	return ((str.length() > 10) ? str.substr(0, 9) + "." : str);
 }
 
-/*
-** Default constructor
-*/
 PhoneBook::PhoneBook(void)
 {
 	this->i_contacts = 0;
@@ -33,18 +30,12 @@ PhoneBook::PhoneBook(void)
 		std::cout << "PhoneBook created" << std::endl;
 }
 
-/*
-** Destructor
-*/
 PhoneBook::~PhoneBook(void)
 {
 	if (DEBUG)
 		std::cout << "PhoneBook destroyed" << std::endl;
 }
 
-/*
-** Function to add a contact to the phonebook
-*/
 void PhoneBook::add(void)
 {
 	std::string first_name, last_name, nickname, phone_number, darkest_secret;
@@ -79,9 +70,6 @@ void PhoneBook::add(void)
 	std::cout << std::endl;
 }
 
-/*
-** Function to search for a contact in the phonebook
-*/
 void PhoneBook::search(void)
 {
 	size_t i;
@@ -114,7 +102,7 @@ void PhoneBook::search(void)
 	std::cin.ignore();
 	std::cin >> index;
 	if (std::cin.eof())
-		exit(0);
+		exit(EXIT_SUCCESS);
 	std::cout << std::endl;
 	if (index >= 0 && index < (int)this->n_contacts)
 	{

@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 17:57:51 by absalhi           #+#    #+#             */
-/*   Updated: 2023/02/28 11:50:14 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/02/28 14:36:05 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,9 @@ void Account::displayAccountsInfos(void)
 }
 
 Account::Account(int initial_deposit)
+	: _accountIndex(getNbAccounts()), _amount(initial_deposit),
+	  _nbDeposits(0), _nbWithdrawals(0)
 {
-	this->_accountIndex = getNbAccounts();
-	this->_amount = initial_deposit;
-	this->_nbDeposits = 0;
-	this->_nbWithdrawals = 0;
 	Account::_nbAccounts++;
 	Account::_totalAmount += initial_deposit;
 	Account::_displayTimestamp();

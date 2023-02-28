@@ -6,7 +6,7 @@
 #    By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/07 01:32:49 by absalhi           #+#    #+#              #
-#    Updated: 2023/02/28 11:55:31 by absalhi          ###   ########.fr        #
+#    Updated: 2023/02/28 14:47:42 by absalhi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,9 +36,6 @@ $(NAME)		:	$(OBJS)
 				@echo $(GREEN)"- Compiled -"$(NONE)
 				@./$(NAME) > mylogs
 
-diff		:
-				@diff mylogs theirlogs
-
 clean		:
 				@echo $(ITALIC)$(GRAY) "     - Removing object files..." $(NONE)
 				@$(RM) $(OBJS)
@@ -49,4 +46,4 @@ fclean		:	clean
 
 re			:	fclean all
 
-.PHONY		:	all debug diff clean fclean re
+.PHONY		:	all clean fclean re

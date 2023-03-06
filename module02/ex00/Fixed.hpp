@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 01:22:21 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/06 01:31:09 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/06 04:30:11 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class Fixed
 	public:
 
 		Fixed( void );
-		Fixed( Fixed const &obj );
+		Fixed( Fixed const &other );
 		~Fixed( void );
-		Fixed &operator=( Fixed const &obj );
+		Fixed &operator=( Fixed const &other );
 
 		void setRawBits( int const raw );
 
@@ -35,11 +35,11 @@ class Fixed
 
 	private:
 
-		int _n;
-		static const int _s = 8;
+		int _value;
+		static const int _fractionalBits = 8;
 
 };
 
-std::ostream &operator<<(std::ostream &out, Fixed const &obj);
+std::ostream &operator<<(std::ostream &os, Fixed const &obj);
 
 #endif

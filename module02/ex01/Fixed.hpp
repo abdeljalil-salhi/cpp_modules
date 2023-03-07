@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 03:36:19 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/06 05:42:33 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/07 22:30:01 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ class Fixed
 		Fixed( void );
 		Fixed( const int value );
 		Fixed( const float value );
-		Fixed( Fixed const &other );
+		Fixed( Fixed const &rhs );
 		~Fixed( void );
-		Fixed &operator=( Fixed const &other );
+		Fixed &operator=( Fixed const &rhs );
 
 		float toFloat( void ) const;
 		int toInt( void ) const;
@@ -46,6 +46,6 @@ class Fixed
 
 };
 
-std::ostream &operator<<(std::ostream &os, Fixed const &obj);
+std::ostream &operator<<(std::ostream &os, Fixed const &rhs);
 
 #endif

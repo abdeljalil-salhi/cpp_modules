@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:56:32 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/06 23:29:20 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/07 22:19:23 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,23 @@ class Fixed
 		Fixed( void );
 		Fixed( const int value );
 		Fixed( const float value );
-		Fixed( Fixed const &other );
+		Fixed( Fixed const &rhs );
 		~Fixed( void );
-		Fixed &operator=( Fixed const &other );
+		Fixed &operator=( Fixed const &rhs );
 		
 		/* Comparison operators overloading */
-		bool operator>( Fixed const &other );
-		bool operator<( Fixed const &other );
-		bool operator>=( Fixed const &other );
-		bool operator<=( Fixed const &other );
-		bool operator==( Fixed const &other );
-		bool operator!=( Fixed const &other );
+		bool operator>( Fixed const &rhs ) const;
+		bool operator<( Fixed const &rhs ) const;
+		bool operator>=( Fixed const &rhs ) const;
+		bool operator<=( Fixed const &rhs ) const;
+		bool operator==( Fixed const &rhs ) const;
+		bool operator!=( Fixed const &rhs ) const;
 		
 		/* Arithmetic operators overloading */
-		Fixed operator+( Fixed const &other ) const;
-		Fixed operator-( Fixed const &other ) const;
-		Fixed operator*( Fixed const &other ) const;
-		Fixed operator/( Fixed const &other ) const;
+		Fixed operator+( Fixed const &rhs ) const;
+		Fixed operator-( Fixed const &rhs ) const;
+		Fixed operator*( Fixed const &rhs ) const;
+		Fixed operator/( Fixed const &rhs ) const;
 
 		/* Pre-increment/decrement overloading */
 		Fixed &operator++( void );
@@ -72,6 +72,6 @@ class Fixed
 
 };
 
-std::ostream &operator<<(std::ostream &os, Fixed const &obj);
+std::ostream &operator<<(std::ostream &os, Fixed const &rhs);
 
 #endif

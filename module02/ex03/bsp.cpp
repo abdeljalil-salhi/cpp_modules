@@ -6,19 +6,19 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 02:51:23 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/07 22:08:09 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/07 22:42:46 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-static float _area(const Point p1, const Point p2, const Point p3)
+static float _area(Point const p1, Point const p2, Point const p3)
 {
 	float _area = ((p1.getX().toFloat() * (p2.getY().toFloat() - p3.getY().toFloat())) + (p2.getX().toFloat() * (p3.getY().toFloat() - p1.getY().toFloat())) + (p3.getX().toFloat() * (p1.getY().toFloat() - p2.getY().toFloat()))) / 2;
 	return (_area < 0) ? -_area : _area;
 }
 
-bool bsp(const Point a, const Point b, const Point c, const Point point)
+bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
 	float _main0 = _area(a, b, c),
 		  _area1 = _area(point, a, b),

@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:58:37 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/08 21:09:07 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/08 22:41:11 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,21 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &rhs)
 
 void ClapTrap::attack(const std::string &target)
 {
-	(this->_energyPoints == 0 || this->_hitPoints == 0)
-		? std::cout << "⚪🚫 "
-					<< "ClapTrap " << this->_name << " can't attack because"
-					<< " it has no hit points or energy points left."
-					<< std::endl
-		: std::cout << "⚪⚔️  "
+	(this->_energyPoints > 0 && this->_hitPoints > 0)
+		? std::cout << "⚪⚔️  "
 					<< "ClapTrap " << this->_name << " attacks " << target << ","
 					<< " causing " << this->_attackDamage << " points of damage!"
-					<< std::endl,
-		this->_energyPoints--;
+					<< std::endl &&
+			  this->_energyPoints--
+	: (this->_energyPoints == 0)
+		? std::cout << "⚪🚫 "
+					<< "ClapTrap " << this->_name << " can't attack because"
+					<< " it has no energy points left."
+					<< std::endl
+		: std::cout << "⚪🚫 "
+					<< "ClapTrap " << this->_name << " can't attack because"
+					<< " it has no hit points left."
+					<< std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -82,16 +87,21 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	(this->_energyPoints == 0 || this->_hitPoints == 0)
-		? std::cout << "⚪🚫 "
-					<< "ClapTrap " << this->_name << " can't be repaired because"
-					<< " it has no hit points or energy points left."
-					<< std::endl
-		: std::cout << "⚪💉 "
+	(this->_energyPoints > 0 && this->_hitPoints > 0)
+		? std::cout << "⚪💉 "
 					<< "ClapTrap " << this->_name << " gets repaired,"
 					<< " getting " << amount << " hit points back."
-					<< std::endl,
-		this->_energyPoints--, this->_hitPoints += amount;
+					<< std::endl &&
+			  ((this->_energyPoints--) && (this->_hitPoints += amount))
+	: (this->_energyPoints == 0)
+		? std::cout << "⚪🚫 "
+					<< "ClapTrap " << this->_name << " can't be repaired because"
+					<< " it has no energy points left."
+					<< std::endl
+		: std::cout << "⚪🚫 "
+					<< "ClapTrap " << this->_name << " can't be repaired because"
+					<< " it has no hit points left."
+					<< std::endl;
 }
 
 void ClapTrap::setName(const std::string &name)

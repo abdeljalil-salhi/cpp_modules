@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 23:37:49 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/11 00:02:28 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/11 04:06:51 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,19 @@ class Cure : public AMateria
 
 		Cure( void );
 		Cure( Cure const &rhs );
-		virtual ~Cure( void );
+		~Cure( void );
 		Cure &operator=( Cure const &rhs );
 
-		virtual AMateria *clone( void ) const;
-		virtual void use( ICharacter &target );
+		std::string const &getType() const;
+
+		Cure *clone( void ) const;
+		void use( ICharacter &target );
 
 	protected:
 
 	private:
+
+		std::string _type;
 
 };
 

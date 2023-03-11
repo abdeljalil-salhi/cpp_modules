@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 23:47:23 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/11 02:58:43 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/11 03:37:59 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ class Character : public ICharacter
 		virtual void equip( AMateria *m );
 		virtual void unequip( int idx );
 		virtual void use( int idx, ICharacter &target );
+		AMateria *getMateriaFromInventory( int idx );
 
 	protected:
 
 	private:
 
-		std::string _name;
+		std::string const _name;
 		AMateria *_inventory[4];
 
 };

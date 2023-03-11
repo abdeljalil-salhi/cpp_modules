@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 00:04:08 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/11 04:38:14 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/11 06:58:57 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,17 @@ MateriaSource &MateriaSource::operator=(MateriaSource const &rhs)
 
 void MateriaSource::learnMateria(AMateria *m)
 {
-	int i = 0;
-	while (this->_inventory[i] && i < 4)
-		i++;
+	if (!m)
+	{
+		std::cout << "❌  "
+				  << "Materia is NULL."
+				  << std::endl;
+		return;
+	}
+
+	int i = -1;
+	while (this->_inventory[++i] && i < 4)
+		;
 	if (i >= 4)
 	{
 		std::cout << "❌  "
@@ -76,10 +84,11 @@ void MateriaSource::learnMateria(AMateria *m)
 
 AMateria *MateriaSource::createMateria(std::string const &type)
 {
-	int i = 0;
-	while ((this->_inventory)[i] && ((this->_inventory)[i])->getType() != type && i < 4)
-		i++;
-	if (i >= 4 || !(this->_inventory)[i])
+	int i = -1;
+	while (this->_inventory[++i] &&
+		   this->_inventory[i]->getType() != type && i < 4)
+		;
+	if (4 <= i || !this->_inventory[i])
 	{
 		std::cout << "❌  "
 				  << "Materia " << type << " not found in Materia Source."

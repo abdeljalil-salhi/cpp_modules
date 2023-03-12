@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 08:02:46 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/12 09:02:00 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/12 09:33:43 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		? throw AForm::FormNotSignedException()
 		: NULL;
 
-	(rand() % 2 == 0)
+	srand(time(nullptr));
+	(rand() % 2)
 		? std::cout << "RobotomyRequestForm " << this->_target
 					<< " has been robotomized successfully." << std::endl
 		: std::cout << "RobotomyRequestForm " << this->_target

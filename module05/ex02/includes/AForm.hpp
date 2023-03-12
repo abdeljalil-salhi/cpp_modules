@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 04:50:59 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/12 08:46:09 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/12 09:25:19 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class AForm
 		AForm( void );
 		AForm( std::string name, int signGrade, int executionGrade );
 		AForm( AForm const &rhs );
-		~AForm( void );
+		virtual ~AForm( void );
 		AForm &operator=( AForm const &rhs );
 
 		std::string const &getName( void ) const;

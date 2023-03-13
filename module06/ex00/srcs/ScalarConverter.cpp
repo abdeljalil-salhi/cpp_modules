@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 18:12:54 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/12 20:01:31 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/13 14:27:15 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ std::string ScalarConverter::convert(std::string const &literal)
 		if (literal.length() == 1 && !isdigit(literal[0]))
 		{
 			int _c = static_cast<int>(literal[0]);
-			_result = "char: " + literal +
-					  "\nint: " + std::to_string(_c) +
+			_result = "char: '" + literal +
+					  "'\nint: " + std::to_string(_c) +
 					  "\nfloat: " + convertToPointLiteral(static_cast<float>(_c)) +
 					  "\ndouble: " + convertToPointLiteral(static_cast<double>(_c)) + "\n";
 			return _result;
@@ -86,7 +86,7 @@ std::string ScalarConverter::convert(std::string const &literal)
 		_result = "char: ";
 		char _c = static_cast<char>(std::stoi(literal));
 		if (std::isprint(_c))
-			_result += _c;
+			_result += std::string("'") + _c + std::string("'");
 		else
 			_result += "Non displayable";
 		_result += "\nint: ";

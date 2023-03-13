@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:23:46 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/13 11:11:54 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/13 17:25:08 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,26 @@ class Array
 	
 	public:
 	
-		Array( void )
+		Array<T>( void )
 			: _array(new T[0]()), _size(0) {}
 		
-		Array( unsigned int n )
+		Array<T>( unsigned int n )
 			: _array(new T[n]()), _size(n) {}
 		
-		Array( Array const &rhs )
+		Array<T>( Array const &rhs )
 			: _array(new T[rhs._size]()), _size(rhs._size)
 		{
 			for (size_t i = 0; i < this->_size; i++)
 				this->_array[i] = rhs._array[i];
 		}
 		
-		~Array( void )
+		~Array<T>( void )
 		{
 			if (this->_array)
 				delete[] this->_array;
 		}
 		
-		Array &operator=( Array const &rhs )
+		Array<T> &operator=( Array<T> const &rhs )
 		{
 			if (this->_array)
 				delete[] this->_array;

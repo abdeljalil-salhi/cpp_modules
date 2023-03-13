@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:23:46 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/13 11:02:57 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/13 11:11:54 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,21 @@ class Array
 		T &operator[]( unsigned int i )
 		{
 			if (i >= this->_size || !this->_array)
-				throw Array<T>::OutOfRange();
+				throw std::out_of_range("Index is out of bounds");
 			return this->_array[i];
 		}
 
-		class OutOfRange: public std::exception
+		T const &operator[]( unsigned int i ) const
 		{
-			public:
-				virtual const char *what( void ) const throw()
-				{
-					return "Index is out of bounds";
-				}
-		};
+			if (i >= this->_size || !this->_array)
+				throw std::out_of_range("Index is out of bounds");
+			return this->_array[i];
+		}
+
+		size_t size( void ) const
+		{
+			return this->_size;
+		}
 
 	protected:
 

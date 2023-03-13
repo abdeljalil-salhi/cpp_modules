@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 10:21:52 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/13 11:04:22 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/13 11:10:13 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int main(int, char **)
 	{
 		numbers[i] = rand();
 	}
+	std::cout << "Size: " << numbers.size() << std::endl;
 	delete[] mirror; //
 	return 0;
 }

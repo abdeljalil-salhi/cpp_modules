@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 04:50:59 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/12 09:25:19 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/13 12:02:21 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ class AForm
 
 	protected:
 
+	private:
+	
 		std::string const _name;
 		bool _isSigned;
 		int const _signGrade;
 		int const _executionGrade;
-
-	private:
 	
 };
 

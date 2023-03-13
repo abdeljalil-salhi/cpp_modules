@@ -6,7 +6,7 @@
 /*   By: absalhi <absalhi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 03:45:10 by absalhi           #+#    #+#             */
-/*   Updated: 2023/03/12 04:20:17 by absalhi          ###   ########.fr       */
+/*   Updated: 2023/03/13 11:58:36 by absalhi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Form::~Form(void)
 
 Form &Form::operator=(Form const &rhs)
 {
-	(void)rhs;
+	this->_isSigned = rhs._isSigned;
 	return *this;
 }
 
